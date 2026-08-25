@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Syed Jasim Raza</title>
+  <title>Syed Jasim Raza | Driver Profile</title>
 
   <meta
     name="description"
-    content="Profile of Syed Jasim Raza, including identification, driving licence category, email address, and location details."
+    content="Driver profile of Syed Jasim Raza including identification, driving licence category, mobile number, blood group, email address, and location details."
   />
   <meta name="author" content="Syed Jasim Raza" />
   <meta name="robots" content="index, follow" />
@@ -16,24 +16,13 @@
   <meta name="color-scheme" content="light" />
 
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Syed Jasim Raza" />
-  <meta
-    property="og:description"
-    content="Profile and contact information for Syed Jasim Raza."
-  />
+  <meta property="og:title" content="Syed Jasim Raza | Driver Profile" />
+  <meta property="og:description" content="Driver profile and contact information for Syed Jasim Raza." />
   <meta
     property="og:image"
     content="https://firebasestorage.googleapis.com/v0/b/codebooth-a4b70.appspot.com/o/images%2FedVY0cd2KufUey84lqhZ%2FWhatsApp%20Image%202026-08-15%20at%202.44.58%20PM.jpeg?alt=media&amp;token=9d2684ce-fc43-45fe-b294-34979ad686d4"
   />
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Syed Jasim Raza | Profile" />
-  <meta
-    name="twitter:description"
-    content="Profile and contact information for Syed Jasim Raza."
-  />
-
-  <!-- Inline favicon keeps this as one self-contained HTML file. -->
   <link
     rel="icon"
     type="image/svg+xml"
@@ -45,24 +34,23 @@
   <style>
     :root {
       --emerald: #0f6b46;
-      --emerald-deep: #0b4f36;
+      --emerald-deep: #0a4f35;
+      --emerald-mid: #1d7a55;
+      --emerald-light: #8ab69d;
       --emerald-soft: #eaf5ef;
       --emerald-soft-2: #f5faf7;
       --ink: #18211c;
-      --ink-2: #48544d;
+      --ink-2: #4b5750;
       --ink-3: #7a867f;
       --line: #e7ece9;
       --surface: #ffffff;
       --page: #f4f7f5;
       --shadow: 0 24px 70px rgba(19, 74, 49, 0.12);
       --radius-xl: 30px;
-      --radius-lg: 20px;
       --radius-md: 16px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -89,13 +77,7 @@
       text-rendering: optimizeLegibility;
     }
 
-    img {
-      max-width: 100%;
-    }
-
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    a { -webkit-tap-highlight-color: transparent; }
 
     .shell {
       width: min(100%, 560px);
@@ -112,38 +94,74 @@
 
     .hero {
       position: relative;
-      min-height: 210px;
+      min-height: 230px;
       overflow: hidden;
       background:
-        linear-gradient(135deg, #0f6b46 0%, #1d7a55 52%, #5e9f7f 100%);
+        linear-gradient(135deg, var(--emerald-deep) 0%, var(--emerald) 46%, var(--emerald-light) 100%);
+      isolation: isolate;
     }
 
+    /* Large flag composition */
     .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(255,255,255,0.14), transparent 28%),
-        radial-gradient(circle at 86% 18%, rgba(255,255,255,0.10), transparent 22%);
-      pointer-events: none;
+      inset: 0 auto 0 0;
+      width: 17%;
+      background: rgba(255,255,255,0.92);
+      z-index: 1;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 280px;
-      height: 280px;
-      right: -95px;
-      top: -105px;
-      border-radius: 50%;
+      inset: 0;
       background:
-        radial-gradient(
-          circle,
-          rgba(255,255,255,0.14) 0%,
-          rgba(255,255,255,0.06) 46%,
-          transparent 68%
-        );
+        linear-gradient(135deg, rgba(255,255,255,0.12), transparent 38%),
+        radial-gradient(circle at 84% 18%, rgba(255,255,255,0.18), transparent 22%),
+        radial-gradient(circle at 84% 68%, rgba(255,255,255,0.10), transparent 28%);
       pointer-events: none;
+      z-index: 1;
+    }
+
+    .flag-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .crescent-bg {
+      position: absolute;
+      right: -16px;
+      top: 16px;
+      width: 240px;
+      height: 240px;
+      opacity: 0.34;
+      transform: rotate(-8deg);
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.05));
+    }
+
+    .star-bg {
+      position: absolute;
+      right: 48px;
+      top: 64px;
+      width: 66px;
+      height: 66px;
+      opacity: 0.86;
+      transform: rotate(12deg);
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.05));
+    }
+
+    .hero-accent {
+      position: absolute;
+      right: -10%;
+      bottom: -48px;
+      width: 74%;
+      height: 110px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.18));
+      border-radius: 999px;
+      transform: rotate(-10deg);
+      opacity: 0.55;
     }
 
     .avatar-wrap {
@@ -231,11 +249,7 @@
       background: #fff;
       color: inherit;
       text-decoration: none;
-      transition:
-        transform .18s ease,
-        box-shadow .18s ease,
-        border-color .18s ease,
-        background .18s ease;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
     }
 
     a.item:hover {
@@ -246,7 +260,7 @@
     }
 
     a.item:focus-visible {
-      outline: 3px solid rgba(15, 107, 70, 0.22);
+      outline: 3px solid rgba(15,107,70,0.22);
       outline-offset: 3px;
     }
 
@@ -271,9 +285,7 @@
       stroke-linejoin: round;
     }
 
-    .meta {
-      min-width: 0;
-    }
+    .meta { min-width: 0; }
 
     .label {
       display: block;
@@ -296,31 +308,21 @@
 
     .footer-accent {
       height: 5px;
-      background: linear-gradient(90deg, var(--emerald-deep), var(--emerald), #8ab69d);
+      background: linear-gradient(90deg, var(--emerald-deep), var(--emerald), var(--emerald-light));
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         scroll-behavior: auto !important;
         transition: none !important;
       }
     }
 
     @media (max-width: 480px) {
-      html,
-      body {
-        background: #fff;
-      }
+      html, body { background: #fff; }
+      body { padding: 0; }
 
-      body {
-        padding: 0;
-      }
-
-      .shell {
-        width: 100%;
-      }
+      .shell { width: 100%; }
 
       .card {
         min-height: 100vh;
@@ -330,8 +332,29 @@
         box-shadow: none;
       }
 
-      .hero {
-        min-height: 190px;
+      .hero { min-height: 206px; }
+
+      .hero::before { width: 16%; }
+
+      .crescent-bg {
+        width: 208px;
+        height: 208px;
+        right: -22px;
+        top: 20px;
+        opacity: 0.32;
+      }
+
+      .star-bg {
+        width: 58px;
+        height: 58px;
+        right: 34px;
+        top: 66px;
+      }
+
+      .hero-accent {
+        width: 82%;
+        right: -18%;
+        height: 100px;
       }
 
       .avatar-wrap {
@@ -340,18 +363,14 @@
         margin-top: -62px;
       }
 
-      .identity {
-        padding: 18px 18px 24px;
-      }
+      .identity { padding: 18px 18px 24px; }
 
       .credential {
         font-size: 12px;
         line-height: 1.5;
       }
 
-      .divider {
-        margin: 0 18px;
-      }
+      .divider { margin: 0 18px; }
 
       .content {
         padding:
@@ -366,19 +385,12 @@
         padding: 13px 14px;
       }
 
-      .value {
-        font-size: 14px;
-      }
+      .value { font-size: 14px; }
     }
 
     @media (max-width: 360px) {
-      .credential {
-        border-radius: 14px;
-      }
-
-      .item {
-        align-items: flex-start;
-      }
+      .credential { border-radius: 14px; }
+      .item { align-items: flex-start; }
     }
   </style>
 </head>
@@ -387,8 +399,23 @@
   <main class="shell">
     <section class="card">
 
-      <div class="hero" aria-label="Profile header">
-</div>
+      <div class="hero" aria-label="Pakistan flag inspired profile header">
+        <div class="flag-overlay" aria-hidden="true">
+          <svg class="crescent-bg" viewBox="0 0 300 300">
+            <circle cx="126" cy="150" r="74" fill="rgba(255,255,255,0.98)" />
+            <circle cx="158" cy="128" r="72" fill="#1d7a55" />
+          </svg>
+
+          <svg class="star-bg" viewBox="0 0 100 100">
+            <polygon
+              points="50,5 61,37 95,37 67,57 78,91 50,70 22,91 33,57 5,37 39,37"
+              fill="rgba(255,255,255,0.98)"
+            />
+          </svg>
+
+          <div class="hero-accent"></div>
+        </div>
+      </div>
 
       <div class="avatar-wrap">
         <img
@@ -415,6 +442,7 @@
         <h2 class="eyebrow">Contact info</h2>
 
         <div class="details">
+
           <a class="item" href="mailto:jasimsyed60@gmail.com" aria-label="Email Syed Jasim Raza">
             <div class="icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -422,12 +450,35 @@
                 <path d="m3 7 9 6 9-6"></path>
               </svg>
             </div>
-
             <div class="meta">
               <span class="label">Email</span>
               <span class="value">jasimsyed60@gmail.com</span>
             </div>
           </a>
+
+          <a class="item" href="tel:03469771054" aria-label="Call Syed Jasim Raza">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="meta">
+              <span class="label">Mobile</span>
+              <span class="value">03469771054</span>
+            </div>
+          </a>
+
+          <div class="item">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3s5 5.1 5 9a5 5 0 1 1-10 0c0-3.9 5-9 5-9Z"></path>
+              </svg>
+            </div>
+            <div class="meta">
+              <span class="label">Blood Group</span>
+              <span class="value">A+</span>
+            </div>
+          </div>
 
           <div class="item">
             <div class="icon">
@@ -436,12 +487,12 @@
                 <circle cx="12" cy="10" r="2.5"></circle>
               </svg>
             </div>
-
             <div class="meta">
               <span class="label">Address</span>
               <span class="value">PAKISTAN KPK-KOHAT DISTRICT KOHAT SHERKOT</span>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -455,6 +506,7 @@
     "@type": "Person",
     "name": "Syed Jasim Raza",
     "email": "mailto:jasimsyed60@gmail.com",
+    "telephone": "03469771054",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "Pakistan",
@@ -465,6 +517,5 @@
     "image": "https://firebasestorage.googleapis.com/v0/b/codebooth-a4b70.appspot.com/o/images%2FedVY0cd2KufUey84lqhZ%2FWhatsApp%20Image%202026-08-15%20at%202.44.58%20PM.jpeg?alt=media&token=9d2684ce-fc43-45fe-b294-34979ad686d4"
   }
   </script>
-
 </body>
 </html>
